@@ -3,7 +3,7 @@
 
 async function main() {
   const users = await fetch("https://jsonplaceholder.typicode.com/users");
-  const usersData = users.json();
+  const usersData = await users.json();
   const userListEl = document.querySelector(".user-list");
    userListEl.innerHTML = usersData.map((user) => userHTML(user)).join("");        
 }
